@@ -1,5 +1,5 @@
-const responseWithData = (req, statusCode, data) =>
-  responseWithData.status(statusCode).json(data);
+const responseWithData = (res, statusCode, data) =>
+  res.status(statusCode).json(data);
 
 const error = (res) =>
   responseWithData(res, 500, {

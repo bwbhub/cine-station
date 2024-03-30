@@ -28,7 +28,7 @@ const UserMenu = () => {
           <Typography
             variant="h6"
             sx={{ cursor: "pointer", userSelect: "none" }}
-            onclick={toggleMenu}
+            onClick={toggleMenu}
           >
             {user.displayName}
           </Typography>
@@ -63,6 +63,12 @@ const UserMenu = () => {
               <ListItemIcon>
                 <LogoutOutlinedIcon />
               </ListItemIcon>
+              <ListItemText
+                disableTypography
+                primary={
+                  <Typography textTransform="uppercase">sign out</Typography>
+                }
+              />
             </ListItemButton>
           </Menu>
         </>
