@@ -1,4 +1,4 @@
-import publicClient from "../client/public.client.js";
+import publicClient from "../client/public.client";
 
 const personEndpoints = {
   detail: ({ personId }) => `person/${personId}`,
