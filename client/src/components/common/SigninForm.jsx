@@ -22,10 +22,10 @@ const SigninForm = ({ switchAuthState }) => {
     },
     ValidationSchema: Yup.object({
       username: Yup.string()
-        .min(8, "username minimum 8 characters")
+        .min(6, "username must be 6 characters minimum")
         .required("username is required"),
       password: Yup.string()
-        .min(8, "password minimum 8 characters")
+        .min(8, "password must be 8 characters minimum")
         .required("password is required"),
     }),
     onSubmit: async (values) => {

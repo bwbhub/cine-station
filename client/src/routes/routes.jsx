@@ -1,6 +1,6 @@
 import HomePage from "../pages/HomePage";
 import PersonDetail from "../pages/PersonDetail";
-import FavoriteList from "../pages/FavortieList";
+import FavoriteList from "../pages/FavoriteList";
 import MediaDetail from "../pages/MediaDetail";
 import MediaList from "../pages/MediaList";
 import MediaSearch from "../pages/MediaSearch";
@@ -10,13 +10,13 @@ import ProtectedPage from "../components/common/ProtectedPage";
 
 export const routesGen = {
   home: "/",
-  MediaList: (type) => `/${type}`,
+  mediaList: (type) => `/${type}`,
   mediaDetail: (type, id) => `/${type}/${id}`,
   mediaSearch: "/search",
   person: (id) => `/person/${id}`,
   favoriteList: "/favorites",
   reviewList: "/reviews",
-  passwordUpdate: "/password-update",
+  passwordUpdate: "password-update",
 };
 
 const routes = [
@@ -28,7 +28,7 @@ const routes = [
   {
     path: "/person/:personId",
     element: <PersonDetail />,
-    state: "home",
+    state: "person.detail",
   },
   {
     path: "/search",
@@ -36,7 +36,7 @@ const routes = [
     state: "search",
   },
   {
-    path: "password-update",
+    path: "/password-update",
     element: (
       <ProtectedPage>
         <PasswordUpdate />
@@ -45,7 +45,7 @@ const routes = [
     state: "password.update",
   },
   {
-    path: "favorites",
+    path: "/favorites",
     element: (
       <ProtectedPage>
         <FavoriteList />
@@ -54,7 +54,7 @@ const routes = [
     state: "favorites",
   },
   {
-    path: "reviews",
+    path: "/reviews",
     element: (
       <ProtectedPage>
         <ReviewList />
@@ -67,7 +67,7 @@ const routes = [
     element: <MediaList />,
   },
   {
-    path: "/:mediaType/:mediaid",
+    path: "/:mediaType/:mediaId",
     element: <MediaDetail />,
   },
 ];

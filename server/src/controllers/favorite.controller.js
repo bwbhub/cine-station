@@ -28,13 +28,13 @@ const removeFavorite = async (req, res) => {
     const { favoriteId } = req.params;
 
     const favorite = await favoriteModel.findOne({
-      user: req.user.id,
       _id: favoriteId,
+      user: req.user.id,
     });
 
     if (!favorite) return responseHandler.notfound(res);
 
-    await favorite.remove();
+    await favorite.deleteOne({ _id: favorite._id });
 
     responseHandler.ok(res);
   } catch {

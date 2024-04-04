@@ -15,6 +15,7 @@ const userApi = {
         username,
         password,
       });
+
       return { response };
     } catch (err) {
       return { err };
@@ -36,7 +37,7 @@ const userApi = {
   },
   getInfo: async () => {
     try {
-      const response = await privateClient.get(userEndpoints.getInfo, {});
+      const response = await privateClient.get(userEndpoints.getInfo);
 
       return { response };
     } catch (err) {
@@ -45,7 +46,7 @@ const userApi = {
   },
   passwordUpdate: async ({ password, newPassword, confirmNewPassword }) => {
     try {
-      const response = await privateClient.put(userEndpoints.signup, {
+      const response = await privateClient.put(userEndpoints.passwordUpdate, {
         password,
         newPassword,
         confirmNewPassword,

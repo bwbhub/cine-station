@@ -9,7 +9,7 @@ const signup = async (req, res) => {
     const checkUser = await userModel.findOne({ username });
 
     if (checkUser)
-      return responseHandler.badrequest(res, "username already used");
+      return responseHandler.badrequest(res, "Username not available");
 
     const user = new userModel();
 
@@ -43,7 +43,7 @@ const signin = async (req, res) => {
       .findOne({ username })
       .select("username password salt id displayName");
 
-    if (!user) return responseHandler.badrequest(res, "User do not exist");
+    if (!user) return responseHandler.badrequest(res, "User not exist");
 
     if (!user.validPassword(password))
       return responseHandler.badrequest(res, "Wrong password");
