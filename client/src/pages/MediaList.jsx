@@ -23,7 +23,7 @@ const MediaList = () => {
   const dispatch = useDispatch();
 
   const mediaCategories = useMemo(() => ["popular", "top_rated"], []);
-  const category = ["popular", "top_rated"];
+  const category = ["popular", "top rated"];
 
   useEffect(() => {
     dispatch(setAppState(mediaType));

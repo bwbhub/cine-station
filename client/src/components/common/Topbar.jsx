@@ -79,7 +79,12 @@ const Topbar = () => {
               >
                 <MenuIcon />
               </IconButton>
-              <Box sx={{ display: { xs: "inline-block", md: "none" } }}>
+              <Box
+                sx={{
+                  display: { xs: "inline-block", md: "none" },
+                  cursor: "pointer",
+                }}
+              >
                 <Logo />
               </Box>
             </Stack>
