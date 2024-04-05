@@ -20,7 +20,7 @@ const port = process.env.PORT || 5000; // Si variable d'environnement non dispo,
 const server = http.createServer(app);
 
 mongoose
-  .connect(process.env.MONGODB_URL)
+  .connect(process.env.MONGODB_URI)
   .then(() => {
     console.log("Mongodb connected");
     server.listen(port, () => {
